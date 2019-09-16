@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { RegistroEstudiantesComponent } from './components/registro-estudiantes/registro-estudiantes.component';
 
 
-const routes: Routes = [{ path: 'registro', component: RegistroEstudiantesComponent },];
+const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -8,8 +8,10 @@ using System.Web.Http;
 
 namespace registroEstudiantes.Controllers
 {
+    //clase principal donde se declararn las funciones del CRUD
     public class EstudianteController : ApiController
     {
+        //Funcion que trae la lista de los registros de la BD
         [HttpGet]
         public IEnumerable<Estudiante> Get()
         {
@@ -18,7 +20,7 @@ namespace registroEstudiantes.Controllers
                 return context.Estudiantes.ToList();
             }
         }
-
+        //Funcion que permite buscar un registro a traves de su id
         [HttpGet]
         public Estudiante Get(int id)
         {
@@ -27,7 +29,7 @@ namespace registroEstudiantes.Controllers
                 return context.Estudiantes.FirstOrDefault(x=> x.id == id);
             }
         }
-
+        //Funcion que crea nuevos registros
         [HttpPost]
         public IHttpActionResult Post(Estudiante estudiante)
         {
@@ -42,7 +44,7 @@ namespace registroEstudiantes.Controllers
                 return Ok (estudiante);
             }
         }
-
+        //funcion que permite editar los registros
         [HttpPut]
         public IHttpActionResult Put(Estudiante estudiante)
         {
@@ -63,7 +65,7 @@ namespace registroEstudiantes.Controllers
                 return Ok(estudiante);
             }
         }
-
+        //funcion que permite eliminar registros de la BD
         [HttpDelete]
         public bool Delete(int id)
         {

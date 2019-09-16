@@ -10,7 +10,7 @@ export class Estudiante {
     this.telefono = telefono,
     this.programa = programa
   }
-
+  // modelo que se utiliza en el registro desde el front
   id: number;
   nombres: string;
   apellidos: string;

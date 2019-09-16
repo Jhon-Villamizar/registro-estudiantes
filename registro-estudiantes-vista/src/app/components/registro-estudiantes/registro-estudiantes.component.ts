@@ -24,6 +24,7 @@ export class RegistroEstudiantesComponent implements OnInit {
   valcorreo: boolean = false;
   valprograma: boolean = false;
 
+  // metodo que registra y valida los datos del registro
 
   enviarRegistro(form?: NgForm) {
     if (form.value.nombres == "" || form.value.apellidos == "" || form.value.tipoEstudiante == "" || form.value.correo == "" || form.value.programa == "") {
@@ -66,13 +67,6 @@ export class RegistroEstudiantesComponent implements OnInit {
     }
 
   }
-
-  borrarForm(form?: NgForm) {
-    if (form) {
-      form.reset();
-    }
-  }
-
 
 
 }

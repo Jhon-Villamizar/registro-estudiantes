@@ -30,13 +30,14 @@ export class ListaEstudiantesComponent implements OnInit {
       password: '1234'
     }
   ]
-
+  // metodo que lista los estudiantes
   listarEstudiantes(){
     this.estudianteService.listarEstudiantes()
       .subscribe(res => {
         this.estudianteService.estudiantes = res as {};
       })
   }
+  // metodo que verifica la valides del login y muestra la lista
   enviarLogin(form?: NgForm) {
     console.log(form.value);
     this.email = form.value.email;

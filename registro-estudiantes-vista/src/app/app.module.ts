@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+// librerias necesarias para hacer peticiones http y formularios reactivos
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
