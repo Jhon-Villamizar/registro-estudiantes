@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Registro De Estudiantes</h1>
+      <form #registroForm="ngForm" (ngSubmit)="enviarRegistro(registroForm)" *ngIf="formulario">
+        <div class="form-group">
+          <input id="id" type="hidden" class="form-control" name="id" #nombre="ngModel"
+            [(ngModel)]="estudianteService.seleccionarEstudiante.id">
+        </div>
+        <div class="form-group">
+          <input id="nombres" type="text" class="form-control" name="nombres" #nombres="ngModel"
+            [(ngModel)]="estudianteService.seleccionarEstudiante.nombres" placeholder="Nombres*" required>
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="valnombres">
+          Dato Requerido
+        </div>
+        <div class="form-group">
+          <input id="apellidos" type="text" class="form-control" name="apellidos" #apellidos="ngModel"
+            [(ngModel)]="estudianteService.seleccionarEstudiante.apellidos" placeholder="Apellidos*" required>
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="valapellidos">
+          Dato Requerido
+        </div>
+        <div class="form-group">
+          <select id="tipoEstudiante" type="text" class="form-control" name="tipoEstudiante" #tipoEstudiante="ngModel"
+            [(ngModel)]="estudianteService.seleccionarEstudiante.tipoEstudiante" placeholder="Tipo de estudiante*"
+            required>
+            <option value="">Tipo de estudiante*</option>
+            <option value="nuevo">Nuevo</option>
+            <option value="transferencia">Transferencia</option>
+            <option value="reingreso">Reingreso</option>
+          </select>
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="valtipo">
+          Dato Requerido
+        </div>
+        <div class="form-group">
+          <select id="programa" type="text" class="form-control" name="programa" #programa="ngModel"
+            [(ngModel)]="estudianteService.seleccionarEstudiante.programa" required>
+            <option value="">Programa deseado*</option>
+            <option value="Terapia Respiratoria">Terapia Respiratoria</option>
+            <option value="Tecnología en Laboratorio de Prótesis Dental">Tecnología en Laboratorio de Prótesis Dental
+            </option>
+            <option value="Tecnología en Gestión Empresarial">Tecnología en Gestión Empresarial</option>
+            <option value="Tecnología en Desarrollo de Software">Tecnología en Desarrollo de Software</option>
+            <option value="Odontología">Odontología</option>
+            <option value="Medicina Veterinaria y Zootecnia">Medicina Veterinaria y Zootecnia</option>
+            <option value="Medicina">Medicina</option>
+            <option value="Ingeniería Administrativa">Ingeniería Administrativa</option>
+            <option value="Derecho">Derecho</option>
+            <option value="">Administración Turística y Hotelera</option>
+            <option value="Administración de Empresas">Administración de Empresas</option>
+          </select>
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="valprograma">
+          Dato Requerido
+        </div>
+        <div class="form-group">
+          <input id="correo" type="text" class="form-control" name="correo" #correo="ngModel"
+            [(ngModel)]="estudianteService.seleccionarEstudiante.correo" placeholder="Email*" required>
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="valcorreo">
+          Dato Requerido
+        </div>
+        <div class="form-group">
+          <input id="direccion" type="text" class="form-control" name="direccion" #direccion="ngModel"
+            [(ngModel)]="estudianteService.seleccionarEstudiante.direccion" placeholder="Direccion" required>
+        </div>
+        <div class="form-group">
+          <input id="telefono" type="text" class="form-control" name="telefono" #telefono="ngModel"
+            [(ngModel)]="estudianteService.seleccionarEstudiante.telefono" placeholder="Telefono" required>
+          <small><span>*</span> Datos Requeridos</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+      <div class="jumbotron" *ngIf="respuesta">
+        <h1 class="display-4">Muchas gracias por registrarte!</h1>
+        <p class="lead">Nos pondremos en contacto contigo proximamente.</p>
+      </div>
+    </div>
+  </div>
+</div>

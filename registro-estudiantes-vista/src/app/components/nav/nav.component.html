@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-color">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <div class="home">
+            <a class="nav-item nav-link" href="javascript:;" (click)="principal()">Home</a>
+
+        </div>
+        <a class="nav-item nav-link" href="javascript:;" (click)="estudiantes()">Registro Estudiantes</a>
+        <a class="nav-item nav-link" href="javascript:;" (click)="admin()">Administrativos</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="container-img mt-3"></div>
+<div class="container" *ngIf="home">
+  <div class="row">
+    <div class="col-md-6">
+      <a href="javascript:;" (click)="estudiantes()">
+        <div class="card">
+          <img src="../../../assets/img/estudiantes.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Registro De Estudiantes</h5>
+            <p class="card-text">Inscribete a cualquiera de nuestros programas atraves de un sencillo formulario y nosotros nos ocuparemos del resto.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-6">
+      <a href="javascript:;" (click)="admin()">
+        <div class="card">
+          <img src="../../../assets/img/autonoma-americas-admisiones.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Administrativos</h5>
+            <p class="card-text">Observa los registros de nuestros proximos estudiantes!<br> Solo si eres administrativo.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<app-registro-estudiantes *ngIf="registro"></app-registro-estudiantes>
+<app-lista-estudiantes *ngIf="lista"></app-lista-estudiantes>
+
+<div class="container-footer">
+  <img src="../../../assets/img/footer.JPG" alt="">
+</div>
+
+
